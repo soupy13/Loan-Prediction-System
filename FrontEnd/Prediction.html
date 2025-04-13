@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility Prediction</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 p-4" style="background-color: #2c3e50;">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="javascript:history.back()" class="text-white font-bold">⬅ Back</a>
+            <h1 class="text-white text-lg font-semibold">Fin-Ai Loan Eligibility Prediction</h1>
+        </div>
+    </nav>
+    <div class="container mx-auto py-5">
+        {% if prediction_text %}
+        <div class="bg-red-600 text-white p-5 rounded-lg text-center font-semibold shadow-lg max-w-2xl mx-auto">
+            <strong>{{ prediction_text }}</strong>
+        </div>
+        {% endif %}
+    </div>
+    <section class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-300 max-w-3xl mx-auto">
+        <h2 class="text-center text-2xl font-semibold mb-6">Loan Application Form</h2>
+        <form action="/predict" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium">Applicant Name</label>
+                    <input type="text" name="appnamme" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" placeholder="Enter Applicant Name" required>
+                </div>
+                <div>
+                    <label class="block font-medium">Gender</label>
+                    <select name="gender" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" required>
+                        <option value="" disabled selected>-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Marital Status</label>
+                    <select name="married" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" required>
+                        <option value="" disabled selected>-- Select Marital Status --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Dependents</label>
+                    <select name="dependents" class="w-full border p-2 rounded focus:ring focus:ring-blue-300">
+                        <option value="" disabled selected>-- Select Dependents --</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3+">3+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Education</label>
+                    <select name="education" class="w-full border p-2 rounded focus:ring focus:ring-blue-300">
+                        <option value="" disabled selected>-- Select Education --</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Not Graduate">Not Graduate</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Self Employed</label>
+                    <select name="employed" class="w-full border p-2 rounded focus:ring focus:ring-blue-300">
+                        <option value="" disabled selected>-- Select Self Employed --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Credit History</label>
+                    <select name="credit" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" required>
+                        <option value="" disabled selected>-- Select Credit History --</option>
+                        <option value="1">1 (Good Credit)</option>
+                        <option value="0">0 (Poor Credit)</option>
+                        <option value="0">Don't Have Knowledge</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Property Area</label>
+                    <select name="area" class="w-full border p-2 rounded focus:ring focus:ring-blue-300">
+                        <option value="" disabled selected>-- Select Property Area --</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Semiurban">Semiurban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">Applicant Income</label>
+                    <input type="number" name="ApplicantIncome" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" placeholder="Enter Applicant Income" required>
+                </div>
+                <div>
+                    <label class="block font-medium">Coapplicant Income</label>
+                    <input type="number" name="CoapplicantIncome" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" placeholder="Enter Coapplicant Income">
+                </div>
+                <div>
+                    <label class="block font-medium">Loan Amount</label>
+                    <input type="number" name="LoanAmount" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" placeholder="Enter Loan Amount" required>
+                </div>
+                <div>
+                    <label class="block font-medium">Loan Amount Term</label>
+                    <input type="number" name="Loan_Amount_Term" class="w-full border p-2 rounded focus:ring focus:ring-blue-300" placeholder="Enter Loan Amount Term" required>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Predict</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

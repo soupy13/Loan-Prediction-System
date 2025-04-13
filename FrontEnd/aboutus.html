@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fin-AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Fin-AI Loan Prediction System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#maindatas">Features</a></li>
+                <li><a href="http://localhost/contact.php">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="about">
+            <h2>About Us</h2>
+            
+            <h3>Our Team</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Souptik Dolui</td> <td>Team Lead</td></tr>
+                    <tr><td>Ritapa Ghatak</td> <td>Frontend Developer</td></tr>
+                    <tr><td>Sabyasachi Roy</td> <td>Backend Developer</td></tr>
+                    <tr><td>Ayon Koley</td> <td>Data Set Preparation</td></tr>
+                    <tr><td>Rahul Kumar</td> <td>Documentation</td></tr>
+                    <tr><td>Pratush Pal</td> <td>Documentation</td></tr>
+                    <tr><td>Aditya Kumar Jha</td> <td>PPT</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Our Vision</h3>
+            <p id="maindatas">
+                Welcome to our Loan Prediction System, where we leverage advanced data analytics and machine learning to provide accurate loan eligibility predictions.
+                Our platform helps financial institutions, banks, and lending agencies assess loan applications efficiently and reduce risks.
+            </p>
+
+            <ul>
+                <li><strong>Loan Eligibility Prediction</strong> - Analyzes applicant details, income, credit history, and employment status.</li>
+                <li><strong>Risk Assessment</strong> - Evaluates financial data and historical trends.</li>
+                <li><strong>Automated Loan Processing</strong> - Reduces manual work and increases efficiency.</li>
+                <li><strong>Credit Score Analysis</strong> - Provides insights into credit scores and financial behavior.</li>
+                <li><strong>User-Friendly Dashboard</strong> - Tracks loan applications and approvals.</li>
+                <li><strong>Data Security & Privacy</strong> - Ensures secure storage of sensitive financial data.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Back Button at the End -->
+    <div class="back-container">
+        <a href="javascript:void(0);" onclick="goBack()" class="back-btn">⬅ Back</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Fin-ai Predictor | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function goBack() {
+            if (confirm("Are you sure you want to go back?")) {
+                history.back();
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- CSS -->
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+}
+
+/* About Section */
+.about {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #2c3e50;
+}
+
+.about h2, .about h3 {
+    color: #333;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #00376e;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Back Button */
+.back-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #1a252f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #2c3e50;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+</style>

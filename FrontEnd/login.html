@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #343a40;
+            padding: 10px 20px;
+            color: white;
+        }
+        .back-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            margin-top: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #060888;;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-btn:hover {
+            background-color: red;
+        }
+        .register-link {
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .security-code {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="back-button" onclick="goBack()">&#8592; Back</button>
+        <span>Login Prediction Login</span>
+    </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" class="input-field" placeholder="Username">
+        <input type="password" class="input-field" placeholder="Password">
+        <input type="text" class="input-field" id="securityInput" placeholder="Enter The Security Code">
+        <p class="security-code" id="securityCode"></p>
+        <button class="login-btn" onclick="validateSecurityCode()">Sign in</button>
+        <a href="/signup" class="register-link">Don't have an account? Register</a>
+    </div>
+    <script>
+        let generatedCode;
+        function generateSecurityCode() {
+            generatedCode = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById("securityCode").innerText = generatedCode;
+        }
+        function validateSecurityCode() {
+            let userInput = document.getElementById("securityInput").value;
+            if (userInput == generatedCode) {
+                alert("Login Successful!");
+            } else {
+                alert("Invalid Security Code. Try Again!");
+                generateSecurityCode();
+            }
+        }
+        function goBack() {
+            window.history.back();
+        }
+        window.onload = generateSecurityCode;
+    </script>
+</body>
+</html>
